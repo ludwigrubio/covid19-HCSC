@@ -42,9 +42,10 @@ Please refer to class documentation to see details of the structure, use followi
 ## Process and learns
 
 ### Sanity Checked
-As I did it on input files, the sanity check was done in a manual exploratory way, some of the aspects I checked are:
+As I did it on input files, the sanity check was done in a manual exploratory way where some of the aspects I checked are:
 * Description (min, max, median, standard deviation) of numeric columns
 * Number of columns and names
+* Correct/ Expected data type per each column
 * *min*, *max* length per each column to find any potential issue
 * *count*s by State-County to verify not missing dates rows
 * Number of rows
@@ -80,15 +81,29 @@ On this repo you'll find an __Exploratory__ folder with [Juypter](https://jupyte
 ---
 #### Joining Dataset
 
-- I removed PUERTO RICO since is not part of the scope of US states and is adding noise to the dataset
+- I removed PUERTO RICO since is not part of the scope of US states and it's adding noise to the dataset
 - FIPS need to be on format SS for state and CCC for counties concatenated SSCCC to be able to join
 - There are in total 61 counties without population data (46 with Unknown name)
 - There are 15 counties name with Unknown name (Some of them repeated over different states)
-- Using cumsum() function to calculate cumulative deaths/cases per day
+- I used cumsum() function to calculate cumulative deaths/cases per day
 - Documented issues related to columns being convert to object type when NaN values created
 ---
 #### Report result
-
+- For _15,518_ records I couldn't find a way to join properly with Population Dataset (1.05 % of data)
+- There only are 61 different counties with empty population of 3,195 counties
+-  I cleaned format output data types, to be:
+     
+| Column |      Data type      
+|----------|:-------------:|
+| date     |  datetime64   |
+| fips     |    string     |
+| county   |    string     |
+| state	   |    string     |
+| population_2019 |  Int64 | 
+| daily_cases    |  Int64  |
+| daily_deaths  |   Int64  |
+| cumulative_cases_to_date | Int64 |
+| cumulative_death_to_date | Int64 |
 ### If I had more time ...
 
 * __Automate unit testing__: The sanity check of the output was executed manually, before and after exporting result into a CSV file. A good/better practice to avoid changes in the expected columns, formats, and result in the output file that Data Scientist will consume, it's a good to have an automated Unit Test, that before deploying or being used by another person could automatically verify the result in terms of acceptance criteria.
