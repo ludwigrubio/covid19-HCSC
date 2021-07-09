@@ -127,7 +127,7 @@ class CovidReportHCSC():
         
         Parameters:
         -----------
-            file_name (string): name of file to be exported, by default report-COVID-Population-[ISO-Timestamp].csv
+            file_name (string): name of file to be exported, by default COVID_19-Population-[timestamp]_[daily|weekly].csv
             
         Returns:
         --------

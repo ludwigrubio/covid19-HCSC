@@ -2,7 +2,7 @@
 """
 Created on Thu Jul  8 20:09:46 2021
 
-@author: gerar
+@author: ludwig rubio
 """
 import sys, getopt, logging
 from datetime import datetime
