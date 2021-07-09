@@ -84,7 +84,7 @@ On this repo you'll find an __Exploratory__ folder with [Juypter](https://jupyte
 - I removed __PUERTO RICO__ since is not part of the scope of US states and it's adding noise to the dataset
 - FIPS need to be on 5 digits format: I filled with 0's state and county to have XX for state and XXX for county to join with other dataset
 - There are in total 61 counties without population data (46 with Unknown name)
-- There are 15 counties name with Unknown name (Some of them repeated over different states)
+- There are 15 counties name with not Unknown name (Some of them repeated over different states)
 - I used cumsum() function to calculate cumulative deaths/cases per day
 - Documented issues related to columns being convert to object type when NaN values created
 ---
