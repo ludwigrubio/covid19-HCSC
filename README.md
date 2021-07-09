@@ -11,7 +11,7 @@ cases to date, and cumulative death counts to date.
 ### Libraries and dependencies
 The python version used for development is: python __3.7.6__
 
-Please before execution install [pandas](https://pandas.pydata.org/) and [numpy](https://numpy.org/), yo can use _requirements.txt_ file to install dependencies, if you have pip installed use following command:
+Please before execution install [pandas](https://pandas.pydata.org/) and [numpy](https://numpy.org/), you can use _requirements.txt_ file to install dependencies, if you have pip installed use following command:
 
 > **pip install** -r requirements.txt
 
@@ -22,7 +22,7 @@ Please execute CreateReport.py file, a _.csv_ file in actual folder level will b
 __report-COVID-Population-[timestamp]_[daily|weekly].csv__ 
 (refer to [_COVID_19-Population-2021-07-09T16-13-11_weekly.csv_](COVID_19-Population-2021-07-09T16-13-11_weekly.csv_) file as an example )
 
-Also an __extended version__ to define a custom data sources URL and output destination folder/name __is available__:
+Also, an __extended version is available__ to define a custom data source URLs and output destination folder/name:
 
 Parameters are optional, you can override any combination of them:
 
@@ -81,17 +81,17 @@ On this repo you'll find an __Exploratory__ folder with [Juypter](https://jupyte
 ---
 #### Joining Datasets
 
-- I removed PUERTO RICO since is not part of the scope of US states and it's adding noise to the dataset
-- FIPS need to be on format SS for state and CCC for counties concatenated SSCCC to be able to join
+- I removed __PUERTO RICO__ since is not part of the scope of US states and it's adding noise to the dataset
+- FIPS need to be on 5 digits format: I filled with 0's state and county to have XX for state and XXX for county to join with other dataset
 - There are in total 61 counties without population data (46 with Unknown name)
 - There are 15 counties name with Unknown name (Some of them repeated over different states)
 - I used cumsum() function to calculate cumulative deaths/cases per day
 - Documented issues related to columns being convert to object type when NaN values created
 ---
 #### Report result
-- For _15,518_ records I couldn't find a way to join properly with Population Dataset (1.05 % of data)
-- There only are 61 different counties with empty population of 3,195 counties
--  I cleaned format output data types, to be:
+- For _15,518_ records couldn't be joinned properly with Population Dataset (1.05 % of the data)
+- There only are 61 different counties with empty population out of 3,195 counties
+- Due different tranformation on the process, different columns got a not expected data type, I'm standardizing the file ouput with following data type format:
      
 | Column |      Data type      
 |----------|:-------------:|
