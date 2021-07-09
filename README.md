@@ -20,9 +20,9 @@ Please before execution install [pandas](https://pandas.pydata.org/) and [numpy]
 Please execute CreateReport.py file, a _.csv_ file in actual folder level will be created with following name: 
 
 __report-COVID-Population-[timestamp]_[daily|weekly].csv__ 
-(refer to [_COVID_19-Population-2021-07-09T16-13-11_weekly.csv_](COVID_19-Population-2021-07-09T16-13-11_weekly.csv_) file as an example )
+(refer to [_COVID_19-Population-2021-07-09T16-13-11_weekly.csv_](COVID_19-Population-2021-07-09T16-13-11_weekly.csv) file as an example )
 
-Also, an __extended version is available__ to define a custom data source URLs and output destination folder/name:
+Also, an __extended version is available__, you can define a custom data source URLs, output destination folder/name and file name postfix daily/weekly:
 
 Parameters are optional, you can override any combination of them:
 
@@ -93,17 +93,17 @@ On this repo you'll find an __Exploratory__ folder with [Juypter](https://jupyte
 - There only are 61 different counties with empty population out of 3,195 counties
 - Due different tranformation on the process, different columns got a not expected data type, I'm standardizing the file ouput with following data type format:
      
-| Column |      Data type      
-|----------|:-------------:|
-| date     |  datetime64   |
-| fips     |    string     |
-| county   |    string     |
-| state	   |    string     |
-| population_2019 |  Int64 | 
-| daily_cases    |  Int64  |
-| daily_deaths  |   Int64  |
-| cumulative_cases_to_date | Int64 |
-| cumulative_death_to_date | Int64 |
+	| Column |      Data type      
+	|----------|:-------------:|
+	| date     |  datetime64   |
+	| fips     |    string     |
+	| county   |    string     |
+	| state	   |    string     |
+	| population_2019 |  Int64 | 
+	| daily_cases    |  Int64  |
+	| daily_deaths  |   Int64  |
+	| cumulative_cases_to_date | Int64 |
+	| cumulative_death_to_date | Int64 |
 ### If I had more time ...
 
 * __Automated unit testing__: The sanity check of the output was executed manually, before and after exporting result into a CSV file. A good/better practice to avoid changes in the expected columns, formats, and result in the output file that Data Scientist will consume, it's a good to have an automated Unit Test, that before deploying or being used by another person could automatically verify the result in terms of acceptance criteria.
