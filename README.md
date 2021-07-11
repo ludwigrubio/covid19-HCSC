@@ -19,7 +19,7 @@ Please before execution install [pandas](https://pandas.pydata.org/) and [numpy]
 
 Please execute CreateReport.py file, a _.csv_ file in actual folder level will be created with following name: 
 
-__report-COVID-Population-[timestamp]_[daily|weekly].csv__ 
+__report-COVID_19-Population-[timestamp]_[daily|weekly].csv__ 
 (refer to [_COVID_19-Population-2021-07-09T16-13-11_weekly.csv_](COVID_19-Population-2021-07-09T16-13-11_weekly.csv) file as an example )
 
 Also, an __extended version is available__, you can define a custom data source URLs, output destination folder/name and file name postfix daily/weekly:

@@ -134,4 +134,4 @@ class CovidReportHCSC():
             report (csv): create a file in specified folder/name              
         """
         
-        self.report.to_csv(file_name)
+        self.report.to_csv(file_name, index=False)
